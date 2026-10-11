@@ -65,6 +65,18 @@ This installs Alacritty, Neovim, Git and the Nerd Font with `winget`, links the 
 - `./install.sh --no-packages` / `.\install.ps1 -NoPackages` — only link the configs.
 - The scripts are safe to re-run. A file that is already in the way is moved to `~/.dotfiles-backup/<timestamp>/`, never deleted.
 
+## Keeping machines in sync
+
+After changing a config or installing a package on any machine, open [Claude Code](https://claude.com/claude-code) in this folder and run:
+
+```
+/sync-dotfiles
+```
+
+It works out what changed on this machine, makes the matching change for the other OSes (package lists, OS guards, install scripts, this README), checks it, then commits and pushes. On the other machines run `git pull`, and re-run the install script if packages or links changed.
+
+Without Claude Code the manual version is: `packages/update.sh`, edit the other OS's package list to match, commit and push.
+
 ## Machine-specific settings
 
 Anything that should not be shared (work paths, tokens, one-off aliases) goes in `~/.bashrc.local`. It is sourced at the end of `bashrc` and is not part of this repo.
