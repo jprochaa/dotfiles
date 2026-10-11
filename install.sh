@@ -38,7 +38,7 @@ install_macos_packages() {
         exit 1
     fi
     info "Installing Homebrew packages from packages/Brewfile"
-    brew bundle --file "$DOTFILES/packages/Brewfile" || warn "some Brewfile entries failed; see output above"
+    brew bundle --no-upgrade --file "$DOTFILES/packages/Brewfile" || warn "some Brewfile entries failed; see output above"
 }
 
 # apt's Neovim is too old for LazyVim, so use the official release build.
