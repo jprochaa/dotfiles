@@ -1,0 +1,60 @@
+tap "peteonrails/voxtype", trusted: { formulae: ["voxtype"] }
+tap "steipete/tap"
+# Official Amazon AWS command-line interface
+brew "awscli"
+# Bourne-Again SHell, a UNIX command interpreter
+brew "bash"
+# Resource monitor. C++ version and continuation of bashtop and bpytop
+brew "btop"
+# Simple, fast and user-friendly alternative to find
+brew "fd"
+# GitHub command-line tool
+brew "gh"
+# Interpreter for PostScript and PDF
+brew "ghostscript"
+# Tools and libraries to manipulate images in select formats
+brew "imagemagick"
+# Lazier way to manage everything docker
+brew "lazydocker"
+# Simple terminal UI for git commands
+brew "lazygit"
+# Package manager for the Lua programming language
+brew "luarocks"
+# Open source relational database management system
+brew "mysql-client"
+# Incremental parsing library
+brew "tree-sitter"
+# Ambitious Vim-fork focused on extensibility and agility
+brew "neovim"
+# Open-source, cross-platform JavaScript runtime environment
+brew "node"
+# Create, run, and share large language models (LLMs)
+brew "ollama"
+# Python version management
+brew "pyenv"
+# Search tool like grep and The Silver Searcher
+brew "ripgrep"
+# Safe, concurrent, practical language
+brew "rust"
+# Modernized, complete, self-contained TeX/LaTeX engine
+brew "tectonic"
+# Terraform version manager inspired by rbenv
+brew "tfenv"
+# Terminal multiplexer
+brew "tmux"
+# Display directories as trees (with optional color/HTML output)
+brew "tree"
+# Menu bar usage monitor for Codex and Claude
+cask "steipete/tap/codexbar", trusted: true
+cask "font-jetbrains-mono-nerd-font"
+# Replacement for Docker Desktop
+cask "orbstack"
+# Push-to-talk voice-to-text
+cask "peteonrails/voxtype/voxtype", trusted: true
+vscode "anthropic.claude-code"
+vscode "openai.chatgpt"
+vscode "openai.codex-audio"
+npm "@mermaid-js/mermaid-cli"
+npm "@openai/codex"
+npm "@zeppos/zeus-cli"
+npm "tree-sitter-cli"

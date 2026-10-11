@@ -1,0 +1,11 @@
+if [ -f ~/.bashrc ]; then source ~/.bashrc; fi
+
+# OrbStack: command-line tools and integration (macOS, only if installed)
+source ~/.orbstack/shell/init.bash 2>/dev/null || :
+
+command -v pyenv >/dev/null 2>&1 && eval "$(pyenv init -)"
+
+[ -d /opt/homebrew/opt/mysql-client/bin ] && export PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
+
+# Keep the exit status of this file clean when the last test is false
+:

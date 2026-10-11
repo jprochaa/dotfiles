@@ -1,0 +1,19 @@
+# Linux (Debian/Ubuntu) packages, one per line. Installed by install.sh.
+# Hand-written equivalent of the Brewfile; edit freely.
+git
+curl
+build-essential
+unzip
+xz-utils
+fontconfig
+bash-completion
+tmux
+ripgrep
+fd-find
+tree
+btop
+gh
+luarocks
+nodejs
+npm
+python3-venv

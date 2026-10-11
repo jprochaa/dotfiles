@@ -1,0 +1,19 @@
+# Show GIT branch in command line
+parse_git_branch() {
+    git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
+}
+
+# macOS only
+if [ "$(uname -s)" = "Darwin" ]; then
+    [ -d /opt/homebrew/bin ] && export PATH="/opt/homebrew/bin:$PATH"
+    export BASH_SILENCE_DEPRECATION_WARNING=1
+fi
+
+export PS1="\u@\h \[\033[32m\]\w\[\033[93m\]\$(parse_git_branch)\[\033[00m\]> "
+export PATH="$HOME/.local/bin:$PATH"
+
+# opencode
+[ -d "$HOME/.opencode/bin" ] && export PATH="$HOME/.opencode/bin:$PATH"
+
+# Machine-specific settings that should not be in the dotfiles repo
+[ -f "$HOME/.bashrc.local" ] && source "$HOME/.bashrc.local"

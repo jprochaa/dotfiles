@@ -1,0 +1,6 @@
+# Windows-only overrides. install.ps1 imports this after alacritty.toml.
+
+# Open WSL (bash, tmux, nvim live there) instead of PowerShell
+[terminal.shell]
+program = "wsl.exe"
+args = ["--cd", "~"]
