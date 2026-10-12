@@ -45,16 +45,16 @@ brew "tmux"
 # Display directories as trees (with optional color/HTML output)
 brew "tree"
 # Menu bar usage monitor for Codex and Claude
-cask "steipete/tap/codexbar", trusted: true
-cask "font-jetbrains-mono-nerd-font"
+# brew install --cask "steipete/tap/codexbar"
+# brew install --cask "font-jetbrains-mono-nerd-font"
 # Replacement for Docker Desktop
-cask "orbstack"
+# brew install --cask "orbstack"
 # Push-to-talk voice-to-text
-cask "peteonrails/voxtype/voxtype", trusted: true
-vscode "anthropic.claude-code"
-vscode "openai.chatgpt"
-vscode "openai.codex-audio"
-npm "@mermaid-js/mermaid-cli"
-npm "@openai/codex"
-npm "@zeppos/zeus-cli"
-npm "tree-sitter-cli"
+# brew install --cask "peteonrails/voxtype/voxtype"
+# vscode "anthropic.claude-code"
+# vscode "openai.chatgpt"
+# vscode "openai.codex-audio"
+# npm "@mermaid-js/mermaid-cli"
+# npm "@openai/codex"
+# npm "@zeppos/zeus-cli"
+# npm "tree-sitter-cli"
