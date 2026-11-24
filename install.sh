@@ -76,7 +76,8 @@ install_linux_font() {
 install_linux_uv_tools() {
     if ! command -v uv >/dev/null 2>&1 && [ ! -x "$HOME/.local/bin/uv" ]; then
         info "Installing uv into ~/.local/bin"
-        curl -LsSf https://astral.sh/uv/install.sh | env UV_NO_MODIFY_PATH=1 sh
+        curl -LsSf https://astral.sh/uv/install.sh | env UV_NO_MODIFY_PATH=1 sh \
+            || { warn "uv install failed; skipping uv tools"; return 0; }
     fi
     local uv_bin tool
     uv_bin="$(command -v uv || echo "$HOME/.local/bin/uv")"
