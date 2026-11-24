@@ -71,6 +71,20 @@ install_linux_font() {
     fc-cache -f >/dev/null 2>&1 || true
 }
 
+# apt has no uv on most releases. The uv tools match the `uv "..."` lines in
+# the Brewfile; jupytext is what nvim's jupytext.nvim uses to open .ipynb files.
+install_linux_uv_tools() {
+    if ! command -v uv >/dev/null 2>&1 && [ ! -x "$HOME/.local/bin/uv" ]; then
+        info "Installing uv into ~/.local/bin"
+        curl -LsSf https://astral.sh/uv/install.sh | env UV_NO_MODIFY_PATH=1 sh
+    fi
+    local uv_bin tool
+    uv_bin="$(command -v uv || echo "$HOME/.local/bin/uv")"
+    for tool in jupytext 'harlequin[mysql,postgres]'; do
+        "$uv_bin" tool install "$tool" || warn "uv could not install $tool"
+    done
+}
+
 install_linux_packages() {
     if ! command -v apt-get >/dev/null 2>&1; then
         warn "apt-get not found; skipping packages (only Debian/Ubuntu are supported)"
@@ -93,6 +107,7 @@ install_linux_packages() {
     fi
 
     install_linux_neovim
+    install_linux_uv_tools
 
     # On WSL the terminal and its font live on the Windows side (install.ps1).
     if [ "$OS" = linux ]; then

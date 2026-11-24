@@ -46,7 +46,7 @@ One file per tool is shared by every OS. Keep it that way; do not fork a config 
 - **tmux:** options that only exist in newer tmux use `set -gq` so older apt versions ignore them. Plugins stay in `~/.tmux/plugins` (pinned with `TMUX_PLUGIN_MANAGER_PATH`); never commit them.
 - **Alacritty:** shared settings in `alacritty.toml`; only Windows-specific overrides in `windows.toml`.
 - **Windows model:** bash, tmux and the main Neovim run in WSL and are set up by `install.sh`. `install.ps1` only handles native Alacritty and Neovim.
-- **Packages:** the three lists are kept equivalent by hand. A tool added to one should be added to the others under that OS's package name (for example `fd` in brew is `fd-find` in apt), or handled in `install.sh` when apt does not have a usable version (Neovim, the Nerd Font, lazygit, Alacritty).
+- **Packages:** the three lists are kept equivalent by hand. A tool added to one should be added to the others under that OS's package name (for example `fd` in brew is `fd-find` in apt), or handled in `install.sh` when apt does not have a usable version (Neovim, the Nerd Font, lazygit, Alacritty, uv and the `uv` tools).
 - **Scripts:** `install.sh` must stay compatible with bash 3.2 (macOS `/bin/bash`): no associative arrays, `mapfile`, or `${var,,}`. Both installers must stay idempotent and must back files up to `~/.dotfiles-backup/<timestamp>/` rather than delete them.
 - **New config:** add the file, a `link` line in `install.sh`, a `Link-Item` in `install.ps1` if it applies to Windows, and a row in the README table.
 

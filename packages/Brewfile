@@ -6,12 +6,18 @@ brew "awscli"
 brew "bash"
 # Resource monitor. C++ version and continuation of bashtop and bpytop
 brew "btop"
+# Open-source framework for augmenting humans using AI
+brew "fabric-ai"
 # Simple, fast and user-friendly alternative to find
 brew "fd"
+# Play, record, convert, and stream select audio and video codecs
+brew "ffmpeg"
 # GitHub command-line tool
 brew "gh"
 # Interpreter for PostScript and PDF
 brew "ghostscript"
+# Improved top (interactive process viewer)
+brew "htop"
 # Tools and libraries to manipulate images in select formats
 brew "imagemagick"
 # Lazier way to manage everything docker
@@ -20,6 +26,8 @@ brew "lazydocker"
 brew "lazygit"
 # Package manager for the Lua programming language
 brew "luarocks"
+# Terminal-based visual file manager
+brew "midnight-commander"
 # Open source relational database management system
 brew "mysql-client"
 # Incremental parsing library
@@ -36,6 +44,8 @@ brew "pyenv"
 brew "ripgrep"
 # Safe, concurrent, practical language
 brew "rust"
+# 7-Zip is a file archiver with a high compression ratio
+brew "sevenzip"
 # Modernized, complete, self-contained TeX/LaTeX engine
 brew "tectonic"
 # Terraform version manager inspired by rbenv
@@ -44,6 +54,10 @@ brew "tfenv"
 brew "tmux"
 # Display directories as trees (with optional color/HTML output)
 brew "tree"
+# Pager/text based browser
+brew "w3m"
+# Feature-rich command-line audio/video downloader
+brew "yt-dlp"
 # Menu bar usage monitor for Codex and Claude
 cask "steipete/tap/codexbar", trusted: true
 cask "font-jetbrains-mono-nerd-font"
@@ -54,6 +68,8 @@ cask "peteonrails/voxtype/voxtype", trusted: true
 vscode "anthropic.claude-code"
 vscode "openai.chatgpt"
 vscode "openai.codex-audio"
+uv "harlequin[mysql,postgres]"
+uv "jupytext"
 npm "@mermaid-js/mermaid-cli"
 npm "@openai/codex"
 npm "@zeppos/zeus-cli"

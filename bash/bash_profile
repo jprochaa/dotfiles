@@ -7,5 +7,14 @@ command -v pyenv >/dev/null 2>&1 && eval "$(pyenv init -)"
 
 [ -d /opt/homebrew/opt/mysql-client/bin ] && export PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
 
+# bun (only if installed)
+if [ -d "$HOME/.bun/bin" ]; then
+    export BUN_INSTALL="$HOME/.bun"
+    export PATH="$BUN_INSTALL/bin:$PATH"
+fi
+
+# ~/.local/bin: uv tools (jupytext), the Linux Neovim and fd links, Hermes
+case ":$PATH:" in *":$HOME/.local/bin:"*) ;; *) export PATH="$HOME/.local/bin:$PATH" ;; esac
+
 # Keep the exit status of this file clean when the last test is false
 :

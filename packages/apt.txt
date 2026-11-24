@@ -17,3 +17,9 @@ luarocks
 nodejs
 npm
 python3-venv
+ffmpeg
+yt-dlp
+htop
+mc
+p7zip-full
+w3m

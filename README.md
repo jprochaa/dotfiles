@@ -44,6 +44,9 @@ Besides the packages in `packages/apt.txt`, the script installs:
 - **Neovim** from the official release into `~/.local/opt` (apt's version is too old for LazyVim).
 - **JetBrainsMono Nerd Font** into `~/.local/share/fonts`.
 - **Alacritty** and **lazygit** from apt when the release has them; otherwise it prints a warning and you install them by hand.
+- **uv** into `~/.local/bin`, then the uv tools from the Brewfile: `jupytext` (Neovim uses it to open `.ipynb` notebooks) and `harlequin`.
+
+Not installed on Linux: `fabric-ai` has no apt package. If you want it, install it from its [releases](https://github.com/danielmiessler/fabric/releases).
 
 ### Windows
 
@@ -59,6 +62,8 @@ bash, tmux and Neovim run inside **WSL**; Alacritty runs on Windows and opens WS
    ```
 
 This installs Alacritty, Neovim, Git and the Nerd Font with `winget`, links the Neovim config, and writes an Alacritty config that imports the files from this repo.
+
+To open `.ipynb` notebooks in native Windows Neovim, also install jupytext by hand: `winget install astral-sh.uv`, open a new PowerShell, then `uv tool install jupytext`.
 
 ### Options
 
